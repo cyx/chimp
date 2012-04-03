@@ -1,5 +1,0 @@
-desc "Run all tests"
-task :test do
-  exec("cutest test/chimp.rb")
-end
-task :default => :test
