@@ -8,9 +8,9 @@ class Chimp
   attr :data
 
   def self.connect(apikey)
-    dc = apikey[/-(.+)$/, 1]
+    datacenter = apikey[/-(.+)$/, 1]
 
-    new(apikey, dc)
+    new(apikey, datacenter)
   end
 
   def initialize(apikey, datacenter)
