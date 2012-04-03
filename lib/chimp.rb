@@ -10,7 +10,11 @@ class Chimp
   def self.connect(apikey)
     datacenter = apikey[/-(.+)$/, 1]
 
-    new(apikey, datacenter)
+    @current ||= new(apikey, datacenter)
+  end
+
+  def self.current
+    @current || raise(RuntimeError, "No chimp connection defined.")
   end
 
   def initialize(apikey, datacenter)
