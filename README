@@ -1,0 +1,20 @@
+CHIMP(1)
+
+NAME
+      chimp -- Super light mailchimp client
+
+SYNOPSIS
+      chimp = Chimp.connect("acbd18db4cc2f85cedef654fccc4a4d8-us4")
+
+      # Get all lists for your account
+      chimp.lists
+      # => {"total"=>1, "data"=>[{"id"=>"l654321", ...}]]}
+
+      # Add a new email to one of your lists identified by id
+      chimp.subscribe("foo@bar.com", "l654321")
+
+      # Unsubscribe an existing email
+      chimp.unsubscribe("foo@bar.com", "l654321")
+
+INSTALLATION
+      $ gem install chimp
