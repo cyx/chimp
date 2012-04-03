@@ -12,9 +12,11 @@ SYNOPSIS
 
       # Add a new email to one of your lists identified by id
       chimp.subscribe("foo@bar.com", "l654321")
+      # => "true"
 
       # Unsubscribe an existing email
       chimp.unsubscribe("foo@bar.com", "l654321")
+      # => "true"
 
 INSTALLATION
       $ gem install chimp
