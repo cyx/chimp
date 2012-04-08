@@ -10,7 +10,7 @@ class Chimp
   def self.connect(apikey)
     datacenter = apikey[/-(.+)$/, 1]
 
-    @current ||= new(apikey, datacenter)
+    @current = new(apikey, datacenter)
   end
 
   def self.current
@@ -26,8 +26,8 @@ class Chimp
     JSON(post("lists"))
   end
 
-  def subscribe(email, list_id)
-    post("listSubscribe", email_address: email, id: list_id)
+  def subscribe(email, list_id, opts = {})
+    post("listSubscribe", opts.merge(email_address: email, id: list_id))
   end
 
   def unsubscribe(email, list_id)
