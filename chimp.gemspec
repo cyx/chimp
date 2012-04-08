@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = "chimp"
-  s.version           = "0.0.2"
+  s.version           = "0.0.3"
   s.summary           = "Lightweight mailchimp client"
   s.description       = "For those who want something nimble."
   s.authors           = ["Cyril David"]
