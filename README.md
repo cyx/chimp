@@ -13,6 +13,12 @@ chimp(1) -- super light mailchimp client
     Chimp.current.subscribe("foo@bar.com", "l654321")
     # => "true"
 
+    # If your site has a double opt in workflow already,
+    # you may choose to disable the double opt in process
+    # by mailchimp.
+    Chimp.current.subscribe("foo@bar.com", "l654321", double_optin: false)
+    # => "true"
+
     # Unsubscribe an existing email
     Chimp.current.unsubscribe("foo@bar.com", "l654321")
     # => "true"
