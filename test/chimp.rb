@@ -46,4 +46,31 @@ scope do
 
     assert_equal curl, $curl
   end
+
+  test "list subscribed members" do |chimp|
+    $curl_result = JSON.dump({ id: "12345" })
+
+    result = chimp.list_members("654321")
+
+    assert_equal({ "id" => "12345" }, result)
+
+    curl = 'curl -X POST --data "apikey=key-us1&id=654321' +
+           '&status=" https://us1.api.mailchimp.com/1.3/?method=listMembers'
+
+    assert_equal curl, $curl
+  end
+    
+  test "list unsubscribed members" do |chimp|
+    $curl_result = JSON.dump({ id: "12345" })
+
+    result = chimp.list_members("654321", "unsubscribed")
+
+    assert_equal({ "id" => "12345" }, result)
+
+    curl = 'curl -X POST --data "apikey=key-us1&id=654321' +
+           '&status=unsubscribed" https://us1.api.mailchimp.com/1.3/?method=listMembers'
+
+    assert_equal curl, $curl
+  end
+  
 end
