@@ -24,14 +24,14 @@ chimp(1) -- super light mailchimp client
     # => "true"
 
     # List members for a list that are of a particular status. 
-    Chimp.current.list("l654321", "unsubscribed")
+    Chimp.current.list_members("l654321", "unsubscribed")
     # => "true"
-		# The status can be "subscribed", "unsubscribed", "cleaned", "updated." The default is "subscribed."
+    # The status can be "subscribed", "unsubscribed", "cleaned", "updated."
+    # The default is "subscribed."
 
 ## DESCRIPTION
 
-In order to start using Chimp, simply follow the following
-instructions:
+In order to start using Chimp, simply follow these instructions:
 
 1. Signup for an account at http://mailchimp.com
 2. Create at least one subscriber list.
