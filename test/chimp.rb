@@ -59,7 +59,7 @@ scope do
 
     assert_equal curl, $curl
   end
-    
+
   test "list unsubscribed members" do |chimp|
     $curl_result = JSON.dump({ id: "12345" })
 
@@ -72,5 +72,4 @@ scope do
 
     assert_equal curl, $curl
   end
-  
 end

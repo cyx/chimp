@@ -33,7 +33,7 @@ class Chimp
   def unsubscribe(email, list_id)
     post("listUnsubscribe", email_address: email, id: list_id)
   end
-  
+
   def list_members(list_id, status=nil, opts = {})
     JSON(post("listMembers", id: list_id, status: status))
   end
